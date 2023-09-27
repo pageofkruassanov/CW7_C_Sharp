@@ -70,7 +70,7 @@ namespace CW6_C_Sharp
         }
         T[,] GetMatrix2D()
         {
-            return (dynamic)_array;
+            return _array;
         }
         public static Matrix2D<T> operator +(Matrix2D<T> a, Matrix2D<T> b)
         {
@@ -92,7 +92,7 @@ namespace CW6_C_Sharp
 
         public static bool operator ==(Matrix2D<T> a, Matrix2D<T> b)
         {
-            int sumA = 0, sumB = 0;
+            T sumA = (dynamic)0, sumB = (dynamic)0;
             for (int i = 0; i < a._array.GetLength(0); i++)
             {
                 for (int j = 0; j < a._array.GetLength(1); j++)
@@ -107,7 +107,7 @@ namespace CW6_C_Sharp
                     sumB += (dynamic)b._array[i, j];
                 }
             }
-            if (sumA == sumB)
+            if ((dynamic)sumA == sumB)
             {
                 return true;
             }
